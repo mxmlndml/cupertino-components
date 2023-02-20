@@ -1,6 +1,10 @@
 {
 	"name": "@mxmlndml/cupertino-components",
 	"version": "0.0.2",
+	"license": "MIT",
+	"files": [
+		"dist"
+	],
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com/@mxmlndml"
 	},
@@ -15,12 +19,12 @@
 	},
 	"exports": {
 		".": {
-			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
 		}
 	},
 	"peerDependencies": {
-		"svelte": "^3.54.0"
+		"svelte": "^3.54.0",
+		"@sveltejs/kit": "^1.8.2"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",

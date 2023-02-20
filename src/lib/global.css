@@ -1,0 +1,103 @@
+@import url(./reset.css);
+
+:root {
+  /* colors */
+  --disabled: #999999;
+
+  --fill-primary: #78788033;
+  --fill-secondary: #78788029;
+  --fill-tertiary: #7474801f;
+  --fill-quaternary: #7474801f;
+  --fill-gray: hsl(0, 0%, 97%);
+
+  --gray-100: #2c2c2e;
+  --gray-200: #3a3a3c;
+  --gray-300: #48484a;
+  --gray-400: #636366;
+  --gray-500: #8e8e93;
+  --gray-600: #aeaeb2;
+  --gray-700: #c7c7cc;
+  --gray-800: #d1d1d6;
+  --gray-900: #e5e5ea;
+
+  --red: rgb(255, 59, 48);
+  --orange: rgb(255, 149, 0);
+  --yellow: rgb(255, 204, 0);
+  --green: rgb(52, 199, 89);
+  --mint: rgb(0, 199, 190);
+  --teal: rgb(48, 176, 199);
+  --cyan: rgb(50, 173, 230);
+  --blue: rgb(0, 122, 255);
+  --indigo: rgb(88, 86, 214);
+  --purple: rgb(175, 82, 222);
+  --pink: rgb(255, 45, 85);
+  --brown: rgb(162, 132, 94);
+  --theme: var(--blue);
+
+
+  /* border */
+  --radius-round: 9999999999rem;
+
+  /* easing */
+  --quint-out: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+
+  /* z-index */
+  --z-index-top: 9999999999;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --disabled: #757575;
+
+    --fill-primary: #7878805c;
+    --fill-secondary: #78788052;
+    --fill-tertiary: #7474803d;
+    --fill-quaternary: #7474802e;
+    --fill-gray: hsl(0, 0%, 8%);
+
+    --gray-100: #e5e5ea;
+    --gray-200: #d1d1d6;
+    --gray-300: #c7c7cc;
+    --gray-400: #aeaeb2;
+    --gray-500: #8e8e93;
+    --gray-600: #636366;
+    --gray-700: #48484a;
+    --gray-800: #3a3a3c;
+    --gray-900: #2c2c2e;
+
+    --red: rgb(255, 69, 58);
+    --orange: rgb(255, 159, 10);
+    --yellow: rgb(255, 214, 10);
+    --green: rgb(48, 209, 88);
+    --mint: rgb(99, 230, 226);
+    --teal: rgb(64, 200, 224);
+    --cyan: rgb(100, 210, 255);
+    --blue: rgb(10, 132, 255);
+    --indigo: rgb(94, 92, 230);
+    --purple: rgb(191, 90, 242);
+    --pink: rgb(255, 55, 95);
+    --brown: rgb(172, 142, 104);
+  }
+
+}
+
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.full-width {
+  width: 100%;
+}

@@ -7,7 +7,6 @@
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   />
-  <link rel="stylesheet" href="./global.css" />
 </svelte:head>
 
 <div class:dimmed>
@@ -15,6 +14,8 @@
 </div>
 
 <style>
+  @import url("./global.css");
+
   div {
     --bg: var(--white, white);
     padding: max(0rem, env(safe-area-inset-top))
