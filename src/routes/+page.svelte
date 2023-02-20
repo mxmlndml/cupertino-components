@@ -5,7 +5,6 @@
 <NavigationBar>Title</NavigationBar>
 
 <h1>Hello World</h1>
-<img src="https://picsum.photos/1080/810" class="full-width" />
 <p>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet labore eius
   quis sed vitae ea dignissimos cupiditate, totam iste saepe quo nostrum
