@@ -1,2 +1,4 @@
-export * from "./NavigationBar.svelte";
-export * from "./Page.svelte";
+import Page from "./Page.svelte";
+import NavigationBar from "./NavigationBar.svelte";
+
+export { Page, NavigationBar };
