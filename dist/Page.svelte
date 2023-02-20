@@ -18,11 +18,20 @@
   div {
     --bg: var(--white, white);
     padding: max(0rem, env(safe-area-inset-top))
+      max(0rem, env(safe-area-inset-right))
+      max(0rem, env(safe-area-inset-bottom))
+      max(0rem, env(safe-area-inset-left));
+    background-color: var(--bg);
+    min-height: 100dvh;
+  }
+
+  div > :global(*):not(.full-width) {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: max(0rem, env(safe-area-inset-top))
       max(0.75rem, env(safe-area-inset-right))
       max(0rem, env(safe-area-inset-bottom))
       max(0.75rem, env(safe-area-inset-left));
-    background-color: var(--bg);
-    min-height: 100dvh;
   }
 
   div.dimmed {
