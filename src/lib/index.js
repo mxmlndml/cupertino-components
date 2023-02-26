@@ -1,4 +1,4 @@
-import Page from "./Page.svelte";
+import App from "./App.svelte";
 import NavigationBar from "./NavigationBar.svelte";
 
-export { Page, NavigationBar };
+export { App, NavigationBar };

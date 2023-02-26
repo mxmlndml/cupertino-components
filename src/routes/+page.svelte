@@ -2,7 +2,10 @@
   import NavigationBar from "../lib/NavigationBar.svelte";
 </script>
 
-<NavigationBar>Title</NavigationBar>
+<NavigationBar>
+  Title
+  <p slot="subheader">Foo bar</p>
+</NavigationBar>
 
 <h1>Hello World</h1>
 <p>
@@ -111,3 +114,9 @@
   molestiae eos ipsam non quos commodi, neque, possimus aliquid aliquam
   doloribus esse repudiandae facilis? Hic voluptate quasi alias beatae.
 </p>
+
+<style>
+  h1 {
+    color: var(--theme);
+  }
+</style>
