@@ -3,6 +3,7 @@
   import { resetThemeColor, setThemeColor } from "./helpers/themeColor";
 
   export let prefersLargeTitle = true;
+  export let transparentSubheader = false;
 
   let header: HTMLElement;
   let title: HTMLParagraphElement;
@@ -44,28 +45,40 @@
 {#if prefersLargeTitle}
   <p aria-hidden="true" bind:this={title}><slot /></p>
 {/if}
-<header
-  style:--offset="{headerHeight}px"
-  class:expanded
-  class="subheader full-width"
->
-  <slot name="subheader" />
-</header>
+
+<!-- subheader -->
+{#if $$slots.subheader}
+  <header
+    style:--offset="{headerHeight}px"
+    class:expanded
+    class:transparent={transparentSubheader}
+    class="subheader full-width"
+  >
+    <slot name="subheader" />
+  </header>
+{/if}
 
 <style>
+  header {
+    background-color: var(--fill-gray);
+    border-block: 0.5px solid var(--gray-900);
+    z-index: var(--z-index-top);
+  }
+  header.expanded {
+    background-color: var(--bg);
+    border-color: transparent;
+  }
+
   header.main {
+    position: fixed;
+    inset: 0 0 auto 0;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    position: fixed;
-    inset: 0 0 auto 0;
-    background-color: var(--fill-gray);
-    border-bottom: 0.5px solid var(--gray-900);
-    z-index: var(--z-index-top);
+    border-top: none;
   }
 
-  header.main.expanded {
-    background-color: var(--background);
+  header.main:not(:last-of-type) {
     border-bottom-color: transparent;
   }
 
@@ -99,10 +112,8 @@
   }
 
   header.subheader {
-    position: fixed;
+    position: sticky;
     inset: var(--offset) 0 auto 0;
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: contrast(90%) saturate(130%) blur(20px);
   }
   header.subheader > :global(*) {
     margin: 0 auto;
@@ -110,8 +121,19 @@
     padding-block: 0.5rem;
     max-width: var(--limited-width);
   }
+
+  header.subheader:not(.transparent) {
+    border-top: none;
+  }
+
+  header.subheader.transparent {
+    border-bottom: none;
+    background-color: transparent;
+    backdrop-filter: contrast(90%) saturate(130%) blur(20px);
+    -webkit-backdrop-filter: contrast(90%) saturate(130%) blur(20px);
+  }
+
   header.subheader.expanded {
-    position: static;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }

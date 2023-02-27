@@ -2,9 +2,9 @@
   import NavigationBar from "../lib/NavigationBar.svelte";
 </script>
 
-<NavigationBar>
+<NavigationBar transparentSubheader>
   Title
-  <p slot="subheader">Foo bar</p>
+  <!-- <p slot="subheader">Foo bar</p> -->
 </NavigationBar>
 
 <h1>Hello World</h1>

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Page from "../lib/App.svelte";
+  import App from "../lib/App.svelte";
 </script>
 
-<Page>
+<App>
   <slot />
-</Page>
+</App>
