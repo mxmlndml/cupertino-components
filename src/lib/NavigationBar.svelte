@@ -59,6 +59,12 @@
 {/if}
 
 <style>
+  @media screen and (display-mode: standalone) {
+    header {
+      transition: background-color 0.1s linear;
+    }
+  }
+
   header {
     background-color: var(--fill-gray);
     border-block: 0.5px solid var(--gray-900);
