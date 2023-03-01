@@ -130,10 +130,14 @@
     --theme: var(--blue);
 
     /* padding */
-    --safe-area: max(0rem, env(safe-area-inset-top))
-      max(0.75rem, env(safe-area-inset-right))
-      max(0rem, env(safe-area-inset-bottom))
-      max(0.75rem, env(safe-area-inset-left));
+    --safe-area-top: max(0rem, env(safe-area-inset-top));
+    --safe-area-right: max(0.75rem, env(safe-area-inset-right));
+    --safe-area-bottom: max(0rem, env(safe-area-inset-bottom));
+    --safe-area-left: max(0.75rem, env(safe-area-inset-left));
+    --safe-area-block: var(--safe-area-top) var(--safe-area-bottom);
+    --safe-area-inline: var(--safe-area-right) var(--safe-area-left);
+    --safe-area: var(--safe-area-top) var(--safe-area-right)
+      var(--safe-area-bottom) var(--safe-area-left);
 
     /* border */
     --radius-round: 9999999999rem;
@@ -212,7 +216,7 @@
   div > :global(*):not(.full-width) {
     max-width: var(--limited-width);
     margin: 0 auto;
-    padding: var(--safe-area);
+    padding-inline: var(--safe-area-inline);
   }
 
   div.dimmed {
