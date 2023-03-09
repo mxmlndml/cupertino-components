@@ -214,9 +214,10 @@
   }
 
   div > :global(*):not(.full-width) {
-    max-width: var(--limited-width);
+    max-width: min(100%, var(--limited-width));
     margin: 0 auto;
     padding-inline: var(--safe-area-inline);
+    box-sizing: border-box;
   }
 
   div.dimmed {

@@ -1,4 +1,5 @@
 <script>
+  import Carousel from "$lib/Carousel.svelte";
   import NavigationBar from "../lib/NavigationBar.svelte";
 </script>
 
@@ -8,6 +9,18 @@
 </NavigationBar>
 
 <h1>Hello World</h1>
+
+<Carousel size="contain">
+  <img src="https://picsum.photos/400/300?random=1" alt="placeholder" />
+  <img src="https://picsum.photos/500/350?random=2" alt="placeholder" />
+  <img src="https://picsum.photos/100/100?random=3" alt="placeholder" />
+  <!-- <div>#1</div>
+  <div>#2</div>
+  <div>#3</div> -->
+</Carousel>
+
+<!-- <img src="https://picsum.photos/150" alt="placeholder" /> -->
+
 <p>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet labore eius
   quis sed vitae ea dignissimos cupiditate, totam iste saepe quo nostrum
@@ -118,5 +131,11 @@
 <style>
   h1 {
     color: var(--theme);
+  }
+
+  img {
+    /* object-fit: contain; */
+    display: block;
+    /* height: max-content; */
   }
 </style>
