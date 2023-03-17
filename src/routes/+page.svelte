@@ -1,6 +1,14 @@
-<script>
+<script lang="ts">
   import Carousel from "$lib/Carousel.svelte";
   import NavigationBar from "../lib/NavigationBar.svelte";
+
+  let carousel: Carousel;
+  const showNext = () => {
+    const index = carousel.index;
+    console.log(index);
+    const nextIndex = (index + 1) % carousel.getLength();
+    carousel.scrollTo(nextIndex);
+  };
 </script>
 
 <NavigationBar transparentSubheader>
@@ -10,7 +18,7 @@
 
 <h1>Hello World</h1>
 
-<Carousel size="contain">
+<Carousel bind:this={carousel}>
   <img src="https://picsum.photos/400/300?random=1" alt="placeholder" />
   <img src="https://picsum.photos/500/350?random=2" alt="placeholder" />
   <img src="https://picsum.photos/100/100?random=3" alt="placeholder" />
@@ -18,6 +26,10 @@
   <div>#2</div>
   <div>#3</div> -->
 </Carousel>
+<button on:click={() => carousel.scrollTo(0)}>1</button>
+<button on:click={() => carousel.scrollTo(1)}>2</button>
+<button on:click={() => carousel.scrollTo(2)}>3</button>
+<button on:click={showNext}>Show next</button>
 
 <!-- <img src="https://picsum.photos/150" alt="placeholder" /> -->
 

@@ -157,7 +157,7 @@
       --fill-secondary: #78788052;
       --fill-tertiary: #7474803d;
       --fill-quaternary: #7474802e;
-      --fill-gray: hsl(0, 0%, 8%);
+      --fill-gray: #141414;
 
       --gray-100: #e5e5ea;
       --gray-200: #d1d1d6;
